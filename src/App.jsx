@@ -3,6 +3,7 @@ import { generateTemplate } from './utils/generateTemplate'
 import AnamnesisForm from './components/AnamnesisForm'
 import RoleSwitcher from './components/RoleSwitcher'
 import Chatter from './components/Chatter'
+import { CheckOutlined } from '@ant-design/icons'
 
 function App() {
 	const [role, setRole] = useState(() => {
@@ -48,12 +49,17 @@ function App() {
 		})
 	}
 
+	const [copied, setCopied] = useState(false)
+
 	const handleCopy = async () => {
 		const text = generateTemplate(form)
 
 		await navigator.clipboard.writeText(text)
 
-		alert('Скопировано в буфер обмена')
+		setCopied(true)
+		setTimeout(() => {
+			setCopied(false)
+		}, 1000)
 	}
 
 	return (
@@ -73,7 +79,11 @@ function App() {
 						/>
 
 						<button className='copy-button' type='button' onClick={handleCopy}>
-							Копировать
+							{copied ? (
+								<CheckOutlined style={{ color: '#00ff00', fontSize: '18px' }} />
+							) : (
+								'Копировать'
+							)}
 						</button>
 					</>
 				)}

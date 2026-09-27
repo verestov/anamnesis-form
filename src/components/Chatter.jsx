@@ -1,8 +1,16 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import ChatterField from './ChatterField'
 
 function Chatter() {
-	const [fields, setFields] = useState([])
+	const [fields, setFields] = useState(() => {
+		const savedFields = localStorage.getItem('chatterFields')
+
+		return savedFields ? JSON.parse(savedFields) : []
+	})
+
+	useEffect(() => {
+		localStorage.setItem('chatterFields', JSON.stringify(fields))
+	}, [fields])
 
 	const handleAddField = () => {
 		const newField = {
