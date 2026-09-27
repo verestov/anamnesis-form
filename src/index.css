@@ -44,7 +44,7 @@ textarea {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	width: inherit;
+	width: 100%;
 }
 
 .role-switcher {
@@ -59,6 +59,8 @@ textarea {
 }
 
 .role-switcher button {
+	position: relative;
+	z-index: 1;
 	flex: 1;
 	padding: 9px 12px;
 	border: none;
@@ -74,6 +76,21 @@ textarea {
 .role-switcher button.active {
 	background-color: #2763eb;
 	color: #fff;
+}
+
+.role-slider {
+	position: absolute;
+	top: 4px;
+	left: 4px;
+	width: calc(50% - 6px);
+	height: calc(100% - 8px);
+	background-color: #2763eb;
+	border-radius: 6px;
+	transition: transform 0.25s ease;
+}
+
+.role-slider.is-chatter {
+	transform: translateX(100%);
 }
 
 .field {
@@ -140,6 +157,7 @@ textarea {
 		transform 0.1s ease;
 	cursor: pointer;
 }
+
 .button-red {
 	border: 1px solid #f37370;
 }
@@ -180,4 +198,112 @@ textarea {
 
 .copy-button:hover {
 	background-color: #0c46c3;
+}
+
+/* Chatter */
+
+.chatter {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	width: 100%;
+}
+
+.chatter-field {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	width: 100%;
+	padding: 12px;
+	background-color: #202937;
+	/* background-color: #374151; */
+	/* border: 1px solid #41454b; */
+	border-bottom: 1px solid #374151;
+	border-top: 1px solid #374151;
+	border-radius: 18px;
+}
+
+.chatter-field-actions {
+	display: flex;
+	justify-content: flex-end;
+	gap: 6px;
+}
+
+.chatter-field-actions button {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 36px;
+	height: 36px;
+	padding: 0;
+
+	border: none;
+	border-radius: 6px;
+
+	background-color: #2c3b4d;
+	color: #eee9df;
+
+	cursor: pointer;
+
+	transition:
+		background-color 0.2s ease,
+		color 0.2s ease,
+		transform 0.1s ease;
+}
+
+.chatter-field-actions button:hover {
+	background-color: #2763eb;
+	color: #fff;
+}
+
+.chatter-field-actions button:active {
+	transform: scale(0.95);
+}
+
+.chatter-field .ant-input {
+	border-radius: 6px;
+}
+
+.chatter-field .ant-input:focus,
+.chatter-field .ant-input-focused {
+	border-color: #2c3b4d;
+	box-shadow: 0 0 0 1px rgba(44, 59, 77, 0.15);
+}
+
+.chatter-field .ant-input {
+	background-color: #374151;
+	border: 1px solid #3e3e3f;
+	color: #eee9df;
+	border-radius: 6px;
+}
+
+.chatter-field .ant-input::placeholder {
+	color: #888;
+}
+
+.chatter-field .ant-input-textarea textarea {
+	line-height: 1.4;
+}
+
+.chatter > button {
+	width: 100%;
+	padding: 10px 12px;
+
+	border: 1px dashed #2c3b4d;
+	border-radius: 6px;
+
+	background-color: transparent;
+	color: #8a96a4;
+
+	cursor: pointer;
+
+	transition:
+		background-color 0.2s ease,
+		color 0.2s ease;
+}
+
+.chatter > button:hover {
+	background-color: #2c3b4d;
+	color: #eee9df;
 }

@@ -1,7 +1,9 @@
 function RoleSwitcher({ role, setRole }) {
 	return (
 		<div className='role-switcher'>
-			<div className={`role-slider ${role === 'chatter' ? 'chatter' : ''}`} />
+			<div
+				className={`role-slider ${role === 'chatter' ? 'is-chatter' : ''}`}
+			/>
 
 			<button
 				type='button'

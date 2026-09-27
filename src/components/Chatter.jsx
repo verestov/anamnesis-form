@@ -22,6 +22,14 @@ function Chatter() {
 		)
 	}
 
+	const handleDeleteField = id => {
+		setFields(fields.filter(field => field.id !== id))
+	}
+
+	const handleCopy = async text => {
+		await navigator.clipboard.writeText(text)
+	}
+
 	return (
 		<div className='chatter'>
 			{fields.map(field => (
@@ -29,6 +37,8 @@ function Chatter() {
 					key={field.id}
 					field={field}
 					onChange={handleFieldChange}
+					onDelete={handleDeleteField}
+					onCopy={handleCopy}
 				/>
 			))}
 
