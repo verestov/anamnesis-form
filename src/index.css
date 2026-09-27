@@ -48,11 +48,12 @@ textarea {
 }
 
 .role-switcher {
+	position: relative;
 	display: flex;
-	width: 60%;
+	width: 50%;
 	padding: 4px;
 	margin-bottom: 16px;
-	background-color: #d1d1d1;
+	background-color: #394352;
 	border-radius: 8px;
 	gap: 4px;
 }
@@ -63,7 +64,7 @@ textarea {
 	border: none;
 	border-radius: 6px;
 	background-color: transparent;
-	color: #555;
+	color: #fff;
 	cursor: pointer;
 	transition:
 		background-color 0.2s ease,
@@ -71,8 +72,8 @@ textarea {
 }
 
 .role-switcher button.active {
-	background-color: #f3f3f3;
-	color: #2c3b4d;
+	background-color: #2763eb;
+	color: #fff;
 }
 
 .field {
