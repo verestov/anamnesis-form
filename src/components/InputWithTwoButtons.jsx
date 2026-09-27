@@ -1,23 +1,30 @@
 function InputWithTwoButtons({ label, name, value, onChange, onSetValue }) {
 	return (
-		<div className='boolean-field'>
+		<div className='field'>
 			<span>{label}</span>
-			<div>
-				<input name={name} value={value} onChange={onChange} />
-				<button
-					className='button-green'
-					type='button'
-					onClick={() => onSetValue(name, true)}
-				>
-					Да
-				</button>
-				<button
-					className='button-red'
-					type='button'
-					onClick={() => onSetValue(name, false)}
-				>
-					Нет
-				</button>
+			<div className='input-button-row'>
+				<input
+					name={name}
+					value={value === true ? 'Да' : value === false ? 'Нет' : ''}
+					onChange={onChange}
+				/>
+
+				<div className='button-container'>
+					<button
+						className={`button-green ${value === true ? 'selected' : ''}`}
+						type='button'
+						onClick={() => onSetValue(name, true)}
+					>
+						Да
+					</button>
+					<button
+						className={`button-red ${value === false ? 'selected' : ''}`}
+						type='button'
+						onClick={() => onSetValue(name, false)}
+					>
+						Нет
+					</button>
+				</div>
 			</div>
 		</div>
 	)

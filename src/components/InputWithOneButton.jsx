@@ -1,8 +1,8 @@
 function InputWithOneButton({ label, name, value, onChange, onSetValue }) {
 	return (
-		<div className='boolean-field'>
+		<div className='field'>
 			<span>{label}</span>
-			<div>
+			<div className='input-button-row'>
 				<input name={name} value={value} onChange={onChange} />
 
 				<button
