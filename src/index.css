@@ -6,11 +6,12 @@
 
 body {
 	margin: 0;
-	background-color: #2c3b4d;
+	background-color: #111827;
 	color: #eee9df;
 	font-family: 'Noto Sans', sans-serif;
-	font-weight: 600;
+	font-weight: 400;
 	font-style: normal;
+	font-size: 14px;
 }
 
 button,
@@ -30,6 +31,13 @@ textarea {
 	width: 100%;
 	max-width: 600px;
 	margin: 0 auto;
+	padding-top: 10px;
+	padding-right: 40px;
+	padding-left: 40px;
+	padding-bottom: 40px;
+	background-color: #1f2937;
+	border: 2px solid #41454b;
+	border-radius: 10px;
 }
 
 .field {
@@ -44,10 +52,10 @@ textarea {
 	width: 100%;
 	min-width: 0;
 	padding: 10px 12px;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 
-	background-color: #2c3b4d;
-	border: 1px solid #c9c1b1;
+	background-color: #374151;
+	border: 1px solid #41454b;
 	border-radius: 6px;
 	color: #eee9df;
 
@@ -124,5 +132,16 @@ textarea {
 
 .copy-button {
 	width: 100%;
+	margin-top: 15px;
 	padding: 10px 12px;
+	border: none;
+	border-radius: 6px;
+	background-color: #2663eb;
+	color: #fff;
+	font-weight: 400;
+	cursor: pointer;
+}
+
+.copy-button:hover {
+	background-color: #0c46c3;
 }

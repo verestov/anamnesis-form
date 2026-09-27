@@ -1,4 +1,11 @@
-function InputWithTwoButtons({ label, name, value, onChange, onSetValue }) {
+function InputWithTwoButtons({
+	label,
+	name,
+	value,
+	onChange,
+	onSetValue,
+	placeholder,
+}) {
 	return (
 		<div className='field'>
 			<span>{label}</span>
@@ -7,6 +14,7 @@ function InputWithTwoButtons({ label, name, value, onChange, onSetValue }) {
 					name={name}
 					value={value === true ? 'Да' : value === false ? 'Нет' : ''}
 					onChange={onChange}
+					placeholder={placeholder}
 				/>
 
 				<div className='button-container'>

@@ -49,6 +49,8 @@ function App() {
 		const text = generateTemplate(form)
 
 		await navigator.clipboard.writeText(text)
+
+		alert('Скопировано в буфер обмена')
 	}
 
 	return (
@@ -62,6 +64,7 @@ function App() {
 					name='name'
 					value={form.name}
 					onChange={handleChange}
+					placeholder='Введите имя'
 				/>
 
 				<Input
@@ -69,6 +72,7 @@ function App() {
 					name='city'
 					value={form.city}
 					onChange={handleChange}
+					placeholder='Введите город'
 				/>
 
 				<InputWithTwoButtons
@@ -77,6 +81,7 @@ function App() {
 					value={form.closePerson}
 					onChange={handleChange}
 					onSetValue={handleSetValue}
+					placeholder='Помощь нужна близкому?'
 				/>
 				{form.closePerson && (
 					<Input
@@ -84,6 +89,7 @@ function App() {
 						name='closePersonGender'
 						value={form.closePersonGender}
 						onChange={handleChange}
+						placeholder='Введите пол'
 					/>
 				)}
 				{form.closePerson && (
@@ -93,6 +99,7 @@ function App() {
 						value={form.consent}
 						onChange={handleChange}
 						onSetValue={handleSetValue}
+						placeholder='Пациент согласен на помощь?'
 					/>
 				)}
 
@@ -102,6 +109,7 @@ function App() {
 					value={form.chronicDiseases}
 					onChange={handleChange}
 					onSetValue={handleSetValue}
+					placeholder='Введите ХЗ'
 				/>
 
 				{isDropper && (
@@ -111,6 +119,7 @@ function App() {
 						value={form.nausea}
 						onChange={handleChange}
 						onSetValue={handleSetValue}
+						placeholder='Введите др. заболевания'
 					/>
 				)}
 
@@ -121,6 +130,7 @@ function App() {
 						value={form.bloodVomiting}
 						onChange={handleChange}
 						onSetValue={handleSetValue}
+						placeholder='Рвота с кровью, черный стул'
 					/>
 				)}
 
@@ -130,6 +140,7 @@ function App() {
 					value={form.allergy}
 					onChange={handleChange}
 					onSetValue={handleSetValue}
+					placeholder='Есть ли аллергия на препараты?'
 				/>
 
 				<Input
@@ -137,6 +148,7 @@ function App() {
 					name='lastConsumption'
 					value={form.lastConsumption}
 					onChange={handleChange}
+					placeholder='Кода ПП и сколько запой?'
 				/>
 
 				<Input
@@ -144,6 +156,7 @@ function App() {
 					name='address'
 					value={form.address}
 					onChange={handleChange}
+					placeholder='Введите адрес'
 				/>
 
 				<Input
@@ -151,6 +164,7 @@ function App() {
 					name='comment'
 					value={form.comment}
 					onChange={handleChange}
+					placeholder='Введите комментарий'
 				/>
 
 				<button className='copy-button' type='button' onClick={handleCopy}>

@@ -1,9 +1,21 @@
-function InputWithOneButton({ label, name, value, onChange, onSetValue }) {
+function InputWithOneButton({
+	label,
+	name,
+	value,
+	onChange,
+	onSetValue,
+	placeholder,
+}) {
 	return (
 		<div className='field'>
 			<span>{label}</span>
 			<div className='input-button-row'>
-				<input name={name} value={value} onChange={onChange} />
+				<input
+					name={name}
+					value={value}
+					onChange={onChange}
+					placeholder={placeholder}
+				/>
 
 				<button
 					className='button-red'
