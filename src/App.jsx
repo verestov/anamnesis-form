@@ -1,8 +1,17 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { generateTemplate } from './utils/generateTemplate'
 import AnamnesisForm from './components/AnamnesisForm'
+import RoleSwitcher from './components/RoleSwitcher'
 
 function App() {
+	const [role, setRole] = useState(() => {
+		return localStorage.getItem('role') || 'call-center'
+	})
+
+	useEffect(() => {
+		localStorage.setItem('role', role)
+	}, [role])
+
 	const [form, setForm] = useState({
 		service: '',
 		name: '',
@@ -49,7 +58,10 @@ function App() {
 	return (
 		<main className='app'>
 			<div className='form-container'>
-				<h1>by Mickle</h1>
+				<div className='div-header'>
+					<h1>by Mickle</h1>
+					<RoleSwitcher role={role} setRole={setRole} />
+				</div>
 
 				<AnamnesisForm
 					form={form}

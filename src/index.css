@@ -40,6 +40,41 @@ textarea {
 	border-radius: 10px;
 }
 
+.div-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: inherit;
+}
+
+.role-switcher {
+	display: flex;
+	width: 60%;
+	padding: 4px;
+	margin-bottom: 16px;
+	background-color: #d1d1d1;
+	border-radius: 8px;
+	gap: 4px;
+}
+
+.role-switcher button {
+	flex: 1;
+	padding: 9px 12px;
+	border: none;
+	border-radius: 6px;
+	background-color: transparent;
+	color: #555;
+	cursor: pointer;
+	transition:
+		background-color 0.2s ease,
+		color 0.2s ease;
+}
+
+.role-switcher button.active {
+	background-color: #f3f3f3;
+	color: #2c3b4d;
+}
+
 .field {
 	display: flex;
 	flex-direction: column;
