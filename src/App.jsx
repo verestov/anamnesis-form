@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { generateTemplate } from './utils/generateTemplate'
 import AnamnesisForm from './components/AnamnesisForm'
 import RoleSwitcher from './components/RoleSwitcher'
+import Chatter from './components/Chatter'
 
 function App() {
 	const [role, setRole] = useState(() => {
@@ -63,15 +64,20 @@ function App() {
 					<RoleSwitcher role={role} setRole={setRole} />
 				</div>
 
-				<AnamnesisForm
-					form={form}
-					handleChange={handleChange}
-					handleSetValue={handleSetValue}
-				/>
+				{role === 'call-center' && (
+					<>
+						<AnamnesisForm
+							form={form}
+							handleChange={handleChange}
+							handleSetValue={handleSetValue}
+						/>
 
-				<button className='copy-button' type='button' onClick={handleCopy}>
-					Копировать
-				</button>
+						<button className='copy-button' type='button' onClick={handleCopy}>
+							Копировать
+						</button>
+					</>
+				)}
+				{role === 'chatter' && <Chatter />}
 			</div>
 		</main>
 	)
